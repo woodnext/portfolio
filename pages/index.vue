@@ -24,6 +24,7 @@
 
 <script>
 export default {
+  layout: 'top',
   data(){
     return {
       slides:[
@@ -34,7 +35,7 @@ export default {
         'orange',
       ],
       items: [
-        'Top', 'Profile', 'Works', 'Hobbies'
+        'Top', 'About me', 'Works', 'Hobbies'
       ],
       is_bottom: true
     }
