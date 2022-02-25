@@ -1,6 +1,12 @@
 <template>
   <div class="index">
-    <v-carousel cycle show-arrows-on-hover hide-delimiter-background delimiter-icon="mdi-minus" height="100vh"> 
+    <v-carousel 
+      cycle 
+      show-arrows-on-hover 
+      hide-delimiter-background 
+      delimiter-icon="mdi-minus" 
+      height="100vh"
+    > 
       <v-carousel-item v-for="(slide) in slides" :key="slide" width="100%" >
         <v-sheet
           :color="slide"
@@ -11,11 +17,12 @@
     </v-carousel>
     <div class="buttons">
       <v-row>
-        <v-col v-for="k in 4" :key="k" cols="12">
+        <v-col v-for="link in links" :key="link" cols="12">
           <v-btn
             color="white"
             plain
-          >{{items[k-1]}}</v-btn>
+            :disabled=link.disabled
+          >{{link.name}}</v-btn>
         </v-col>
       </v-row>
     </div>
@@ -34,8 +41,11 @@ export default {
         'red',
         'orange',
       ],
-      items: [
-        'Top', 'About me', 'Works', 'Hobbies'
+      links: [
+        {name: 'Top', disabled: false}, 
+        {name: 'About me', disabled: false}, 
+        {name: 'Works', disabled: true}, 
+        {name: 'Hobbies', disabled: true},
       ],
       is_bottom: true
     }
