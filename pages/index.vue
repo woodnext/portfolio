@@ -17,11 +17,13 @@
     </v-carousel>
     <div class="buttons">
       <v-row>
-        <v-col v-for="link in links" :key="link" cols="12">
+        <v-col v-for="(link, k) in links" :key="k" cols="12">
           <v-btn
             color="white"
             plain
             :disabled=link.disabled
+            :to=link.to
+            nuxt
           >{{link.name}}</v-btn>
         </v-col>
       </v-row>
@@ -42,10 +44,10 @@ export default {
         'orange',
       ],
       links: [
-        {name: 'Top', disabled: false}, 
-        {name: 'About me', disabled: false}, 
-        {name: 'Works', disabled: true}, 
-        {name: 'Hobbies', disabled: true},
+        {name: 'Top', disabled: false, to: '/'}, 
+        {name: 'About me', disabled: false, to: '/profile'}, 
+        {name: 'Works', disabled: true, to: '/works'}, 
+        {name: 'Hobbies', disabled: true, to: 'hobbies'},
       ],
       is_bottom: true
     }

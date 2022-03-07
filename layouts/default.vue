@@ -19,9 +19,7 @@
       </v-btn>
     </v-app-bar>
     <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
+      <Nuxt />
     </v-main>
   </v-app>
 </template>
@@ -31,7 +29,7 @@ export default {
   name: 'DefaultLayout',
   data () {
     return {
-      title: "Shun Kotsugi",
+      title: "WoodNext ",
       items: [
         'Top', 'About me', 'Works', 'hobbies'
       ],
